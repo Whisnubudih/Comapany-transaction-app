@@ -1,0 +1,33 @@
+[
+  {
+      "id": 1,
+      "name": "Pembayaran buku",
+      "date": "2021-04-11",
+      "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/170px-ReceiptSwiss.jpg",
+      "total": 2000,
+      "CompanyId": 1,
+      "UserId": 1,
+      "ItemId": 1 
+  },
+  {
+    "id": 2,
+    "name": "Pembayaran pakaian",
+    "date": "2021-05-13",
+    "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/170px-ReceiptSwiss.jpg",
+    "total": 2000,
+    "CompanyId": 2,
+    "UserId": 2,
+    "ItemId": 2 
+},
+{
+  "id": 3,
+  "name": "Pembayaran mobil",
+  "date": "2020-04-13",
+  "file": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/170px-ReceiptSwiss.jpg",
+  "total": 2000,
+  "CompanyId": 3,
+  "UserId": 1,
+  "ItemId": 3 
+}
+  
+]

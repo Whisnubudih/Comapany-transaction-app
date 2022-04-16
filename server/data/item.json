@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "name": "Buku"
+    },
+    {
+      "id": 2,
+      "name": "Pakaian"
+    },
+    {
+        "id": 3,
+        "name": "Mobil"
+    },
+    {
+        "id": 4,
+        "name": "Motor"
+    }
+ ]

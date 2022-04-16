@@ -1,0 +1,27 @@
+[
+  {
+      "id": 1,
+      "name": "Report buku",
+      "TransactionId": 1,
+      "CompanyId": 1,
+      "UserId": 1,
+      "ItemId": 1 
+  },
+  {
+    "id": 2,
+    "name": "Report Pakaian",
+    "TransactionId": 2,
+    "CompanyId": 2,
+    "UserId": 2,
+    "ItemId": 2 
+},
+{
+  "id": 3,
+  "name": "Report Mobil",
+  "TransactionId": 3,
+  "CompanyId": 3,
+  "UserId": 1,
+  "ItemId": 3 
+}
+  
+]
