@@ -27,10 +27,10 @@ module.exports = (sequelize, DataTypes) => {
     email:{
       allowNull: false,
       type: DataTypes.INTEGER,
-      unique: { msg: "ID EMPLOYEE already exist" },
+      unique: { msg: "email already exist" },
       validate: {
-        notNull: { msg: "ID EMPLOYEE Required" },
-        notEmpty: { msg: "ID EMPLOYEE cannot be empty" },
+        notNull: { msg: "email Required" },
+        notEmpty: { msg: "email cannot be empty" },
       },
     },
     password: {

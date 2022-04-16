@@ -8,6 +8,10 @@ import {
     FETCH_COMPANIES_SUCCESS,
     FETCH_COMPANIESID_SUCCESS,
     COMPANIESID_DELETE_SUCCESS,
+    FETCH_TRANSACTIONS_SUCCESS,
+    FETCH_TRANSACTIONSID_SUCCESS,
+    TRANSACTIONSID_DELETE_SUCCESS,
+    FETCH_REPORTS_SUCCESS,
     LOADING_PRODUCTS,
     ERROR_PRODUCTS
 } from '../actionTypes'
@@ -352,3 +356,142 @@ export const fetchCompaniesId = (id) => {
       
   }
 }
+
+  // =========================== FETCHING TRABSACTIONS ===========================
+  
+  export const setTransaction = (payload) => {
+    return {
+      type: FETCH_TRANSACTIONS_SUCCESS,
+      payload,
+    };
+  };
+  
+  export const fetchTransaction = (payload) => {
+    return (dispatch, getState) => {
+      dispatch(loadingProducts(true));
+      dispatch(errorProducts(null));
+      fetch(`${baseUrl}/transaction`)
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Something went wrong');
+          }
+        })
+        .then((data) => {
+          // console.log(data);
+          dispatch(setTransaction(data));
+        })
+        .catch((err) => {
+          dispatch(errorProducts(err));
+        })
+        .finally(() => {
+          dispatch(loadingProducts(false));
+        });
+    };
+  };
+
+  export const addTransaction = (payload) => {
+    return (dispatch, getState) => {
+      return new Promise((resolve, reject) => {
+        dispatch(loadingUser(true));
+        dispatch(errorUser(null));
+        fetch(`${baseUrl}/transaction`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            access_token: localStorage.getItem('access_token'),
+          },
+          body: JSON.stringify(payload),
+        })
+          .then((data) => {
+            if (data.ok) {
+              return data.json();
+            } else {
+              // console.log(data.statusText);
+              throw new Error(data.statusText);
+            }
+          })
+          .then((data) => {
+            // console.log(data, '<<<<<<<<<<<<<<<<<<<<<< INI DATA SETELAH REGISTER');
+  
+            if (!data.message) {
+              resolve();
+            }
+            // console.log('OK ADD NEW PRODUCT');
+          })
+          .catch((err) => {
+            dispatch(errorProducts(err));
+            reject(err);
+          })
+          .finally(() => {
+            dispatch(loadingProducts(false));
+          });
+      });
+    };
+  };
+  export const transactionDeleteSucces = (payload) => {
+    return {type : TRANSACTIONSID_DELETE_SUCCESS, payload}
+}
+
+export const transactionIdSuccess = (payload) => {
+  return {type : FETCH_TRANSACTIONSID_SUCCESS, payload}
+}
+
+export const fetchTransactionId = (id) => {
+  return (dispatch,getState) => {
+    dispatch(loadingProducts(true));
+    dispatch(errorProducts(null));
+      fetch(`${baseUrl}/transaction/${id}`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
+      .then((data) => {
+        // console.log(data);
+        dispatch(transactionIdSuccess(data));
+      })
+      .catch((err) => {
+        dispatch(errorProducts(err));
+      })
+      .finally(() => {
+        dispatch(loadingProducts(false));
+      });
+      
+  }
+}
+
+export const setReport = (payload) => {
+  return {
+    type: FETCH_REPORTS_SUCCESS,
+    payload,
+  };
+};
+
+export const fetchReport = (payload) => {
+  return (dispatch, getState) => {
+    dispatch(loadingProducts(true));
+    dispatch(errorProducts(null));
+    fetch(`${baseUrl}/report`)
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Something went wrong');
+        }
+      })
+      .then((data) => {
+        // console.log(data);
+        dispatch(setReport(data));
+      })
+      .catch((err) => {
+        dispatch(errorProducts(err));
+      })
+      .finally(() => {
+        dispatch(loadingProducts(false));
+      });
+  };
+};

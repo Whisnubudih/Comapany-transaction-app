@@ -64,7 +64,7 @@ function EditCompany() {
       <div className="formUser">
         <div className="form">
           <div className="container-image">
-            <h2> EDIT ITEM</h2>
+            <h2> EDIT COMPANY</h2>
           </div>
           <form className="form-add" onSubmit={(e) =>{
         e.preventDefault()

@@ -11,7 +11,7 @@ ChartJs.register(
 function Chart() {
   const [data, setData] = useState({
     datasets: [{
-        label: "",
+        label: "CHART INCREASE TRANSACTION",
         data: [],
         backgroundColor:[
           'red',
@@ -26,25 +26,33 @@ function Chart() {
 
   useEffect(()=> {
     const fetchData = () =>  {
-      fetch('https://reimbursement-server.herokuapp.com/reimbursement').then((data) => {
+      fetch('http://localhost:10000/report').then((data) => {
         const res = data.json();
         return res
       }).then((res) => {
         
         const label =[];
         const data = [];
-       
+          const formatDate =(value) => {
+    
+  let timeData = new Date(value) 
+  const timeDate = timeData.getDate()
+  const timeMonth = timeData.getMonth() + 1
+  const timeYear = timeData.getFullYear()
+  return `${timeDate}-${timeMonth}-${timeYear}`
+}
+
         for(var i of res) {
            
-            label.push(i.User.name);
-            data.push(i.amount)
+            label.push(formatDate(i.Transaction.date));
+            data.push(i.Transaction.total)
         }
         // data.push(balance)
 
         setData(
           {
             datasets: [{
-                label: "Reimbursement",
+                label: "CHART INCREASE TRANSACTION",
                 data:data,
                 backgroundColor:[
                     "rgba(75,192,192,1)",
@@ -76,7 +84,7 @@ function Chart() {
     <section>
       <NavbarHome />
        <div className="home">
-      <h2>REIMBURSEMENT CHART</h2>
+      <h2>REPORT CHART</h2>
     <div className="table"></div>
     <div   style={{display:'flex'}}>
        <div style={{ width: 500 }}>

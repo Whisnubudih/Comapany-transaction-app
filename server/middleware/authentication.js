@@ -15,7 +15,7 @@ const authenticationMiddleWare = async  (req,res,next) => {
         const user = await User.findOne({
             where: {
                 
-                employeeID: payload.employeeID,
+                email: payload.email,
             }
         }) 
         
@@ -25,6 +25,8 @@ const authenticationMiddleWare = async  (req,res,next) => {
         
         req.user = {
             id: user.id,
+            email: user.email,
+           
         }
 
         next()

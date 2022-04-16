@@ -20,6 +20,8 @@ function NavbarHome () {
       </div>
     <Link to="/" className="navbar-text" >ITEM</Link>
     <Link to="/company" className="navbar-text" >COMPANY</Link>
+    <Link to="/transaction" className="navbar-text" >TRANSACTION</Link>
+    <Link to="/report" className="navbar-text" >REPORT</Link>
    
     </div>
     <div className="navbar-text" >

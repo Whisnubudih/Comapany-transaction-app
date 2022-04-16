@@ -14,3 +14,9 @@ export const ERROR_USER = 'userError/error';
 export const FETCH_COMPANIES_SUCCESS = 'companies/fetchsuccess';
 export const FETCH_COMPANIESID_SUCCESS = 'companiesid/fetchsuccess';
 export const COMPANIESID_DELETE_SUCCESS = 'companiessdelete/success';
+
+export const FETCH_TRANSACTIONS_SUCCESS = 'transaction/fetchsuccess';
+export const FETCH_TRANSACTIONSID_SUCCESS = 'transactionid/fetchsuccess';
+export const TRANSACTIONSID_DELETE_SUCCESS = 'transactiondelete/success';
+
+export const FETCH_REPORTS_SUCCESS = 'report/fetchsuccess';

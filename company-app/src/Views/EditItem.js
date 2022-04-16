@@ -72,7 +72,7 @@ function EditItem() {
        }} >
               <div className="input-add">
               <label className="label-name" htmlFor="">ITEM NAME</label>
-              <input className="input-name"  name='name' value={editItemForm.name} onChange={changeEditItemInput } type="text"/>
+              <input className="input-name"  name='name' value={editItemForm.name} onChange={changeEditItemInput} type="text"/>
 {/* 
                 <label className="label-name" htmlFor="">Bank Account</label>
                 <input className="input-name" name='bankAccount' value={profileForm.bankAccount} onChange={changeProfileInput} type="text"/> */}

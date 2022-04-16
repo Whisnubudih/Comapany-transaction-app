@@ -12,6 +12,10 @@ import EditItem from './Views/EditItem';
 import AddCompany from './Views/AddCompany';
 import EditCompany from './Views/EditCompany';
 import Chart from './Components/Charts';
+import Transaction from './Views/Transaction';
+import EditTransaction from './Views/EditTransaction';
+import AddTransaction from './Views/AddTransaction'
+import Report from './Views/Report';
 
 function App() {
   return (
@@ -25,11 +29,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       
-        <Route path="/piechart" element={
-         <ProtectedRoute>
-           <Chart />
-         </ProtectedRoute>
-       } />
         <Route path="/additem" element={
           <ProtectedRoute>
             <AddItem />
@@ -53,6 +52,31 @@ function App() {
          <Route path="/editcompany/:id" element={
           <ProtectedRoute>
             <EditCompany />
+          </ProtectedRoute>
+        } />
+         <Route path="/transaction" element={
+          <ProtectedRoute>
+            <Transaction />
+          </ProtectedRoute>
+        } />
+                <Route path="/addtransaction" element={
+          <ProtectedRoute>
+            <AddTransaction />
+          </ProtectedRoute>
+        } />
+         <Route path="/edittransaction/:id" element={
+          <ProtectedRoute>
+            <EditTransaction />
+          </ProtectedRoute>
+        } />
+         <Route path="/report" element={
+          <ProtectedRoute>
+            <Report />
+          </ProtectedRoute>
+        } />
+         <Route path="/grafik" element={
+          <ProtectedRoute>
+            <Chart />
           </ProtectedRoute>
         } />
       </Routes>
