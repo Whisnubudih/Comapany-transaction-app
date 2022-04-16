@@ -26,7 +26,7 @@ function Chart() {
 
   useEffect(()=> {
     const fetchData = () =>  {
-      fetch('http://localhost:10000/report').then((data) => {
+      fetch('https://company-transaction-server.herokuapp.com/report').then((data) => {
         const res = data.json();
         return res
       }).then((res) => {

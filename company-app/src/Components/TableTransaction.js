@@ -21,7 +21,7 @@ function TableTransaction ({transaction}) {
 
 const deleteTransactionHandler = (id) =>{
   console.log(id)
-    fetch(`http://localhost:10000/transaction/${id}`, {
+    fetch(`https://company-transaction-server.herokuapp.com/transaction/${id}`, {
         method: 'DELETE',  
         headers: {
           access_token: localStorage.getItem('access_token')

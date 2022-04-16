@@ -49,7 +49,7 @@ function EditTransaction() {
     },[])
 
     const EditNewTransaction = () =>{
-        fetch(`http://localhost:10000/transaction/${id}`, {
+        fetch(`https://company-transaction-server.herokuapp.com/transaction/${id}`, {
             method: 'PUT', // or 'PUT'
          headers: {
            'Content-Type': 'application/json',

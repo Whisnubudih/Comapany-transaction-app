@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import {productDeleteSucces} from '../store/actionCreator'
 
-function Cards ({product}) {
+function TableItem ({product}) {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 //   const formatDate =() => {
@@ -22,7 +22,7 @@ function Cards ({product}) {
 
 const deleteItemHandler = (id) =>{
   console.log(id)
-    fetch(`http://localhost:10000/item/${id}`, {
+    fetch(`https://company-transaction-server.herokuapp.com/item/${id}`, {
         method: 'DELETE',  
         headers: {
           access_token: localStorage.getItem('access_token')
@@ -76,4 +76,4 @@ const editItemHandler = (id) =>{
    
 }
 
-  export default  Cards;  
+  export default  TableItem ;  

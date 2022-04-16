@@ -216,14 +216,12 @@
 
   .table-td{
     width: 300px;
-    text-align: center;
     align-items: center;
   }
 
 .table-td1{
     width: 300px;
     text-align: center;
-    display: flex;
     align-items: center;
     margin-top: 20px;
   }

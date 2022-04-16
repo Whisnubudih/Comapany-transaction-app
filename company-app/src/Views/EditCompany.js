@@ -32,7 +32,7 @@ function EditCompany() {
     },[])
 
     const EditNewCompany = () =>{
-        fetch(`http://localhost:10000/company/${id}`, {
+        fetch(`https://company-transaction-server.herokuapp.com/company/${id}`, {
             method: 'PUT', // or 'PUT'
          headers: {
            'Content-Type': 'application/json',

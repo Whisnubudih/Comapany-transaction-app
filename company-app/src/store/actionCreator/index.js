@@ -15,7 +15,7 @@ import {
     LOADING_PRODUCTS,
     ERROR_PRODUCTS
 } from '../actionTypes'
-const baseUrl = 'http://localhost:10000';
+const baseUrl = 'https://company-transaction-server.herokuapp.com';
 
 
 

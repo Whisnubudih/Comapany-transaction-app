@@ -32,7 +32,7 @@ function EditItem() {
     },[])
 
     const EditNewItem = () =>{
-        fetch(`http://localhost:10000/item/${id}`, {
+        fetch(`https://company-transaction-server.herokuapp.com/item/${id}`, {
             method: 'PUT', // or 'PUT'
          headers: {
            'Content-Type': 'application/json',
